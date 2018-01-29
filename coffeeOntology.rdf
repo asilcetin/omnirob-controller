@@ -1,0 +1,375 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY coffee "http://austria.omilab.org/omirob/omiarm1/ontology/coffee/" >
+]>
+
+
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:coffee="http://austria.omilab.org/omirob/omiarm1/ontology/coffee/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Ontology rdf:about="http://austria.omilab.org/omirob/omiarm1/ontology/coffee/"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/hasBase -->
+
+    <ObjectProperty rdf:about="&coffee;hasBase">
+        <rdfs:range rdf:resource="&coffee;Base"/>
+        <rdfs:domain rdf:resource="&coffee;Coffee"/>
+        <rdfs:subPropertyOf rdf:resource="&coffee;hasComponents"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/hasComponents -->
+
+    <ObjectProperty rdf:about="&coffee;hasComponents">
+        <rdfs:domain rdf:resource="&coffee;Coffee"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/hasCup -->
+
+    <ObjectProperty rdf:about="&coffee;hasCup">
+        <rdfs:domain rdf:resource="&coffee;Coffee"/>
+        <rdfs:range rdf:resource="&coffee;Cup"/>
+        <rdfs:subPropertyOf rdf:resource="&coffee;hasComponents"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/hasMilk -->
+
+    <ObjectProperty rdf:about="&coffee;hasMilk">
+        <rdfs:domain rdf:resource="&coffee;Coffee"/>
+        <rdfs:range rdf:resource="&coffee;Milk"/>
+        <rdfs:subPropertyOf rdf:resource="&coffee;hasComponents"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/hasSugar -->
+
+    <ObjectProperty rdf:about="&coffee;hasSugar">
+        <rdfs:domain rdf:resource="&coffee;Coffee"/>
+        <rdfs:range rdf:resource="&coffee;Sugar"/>
+        <rdfs:subPropertyOf rdf:resource="&coffee;hasComponents"/>
+    </ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/hasName -->
+
+    <DatatypeProperty rdf:about="&coffee;hasName">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/hasX-coordinate -->
+
+    <DatatypeProperty rdf:about="&coffee;hasX-coordinate">
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/hasY-coordinate -->
+
+    <DatatypeProperty rdf:about="&coffee;hasY-coordinate">
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/hasZ-coordinate -->
+
+    <DatatypeProperty rdf:about="&coffee;hasZ-coordinate">
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/Base -->
+
+    <Class rdf:about="&coffee;Base">
+        <rdfs:subClassOf rdf:resource="&coffee;Coffee_Ingredient"/>
+        <rdfs:comment>This subclass contains the bases, which can be used to produce coffee.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/Coffee -->
+
+    <Class rdf:about="&coffee;Coffee">
+        <rdfs:comment>This class contains the different coffee type, which can be produced by the OMiArm1.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/Coffee_Ingredient -->
+
+    <Class rdf:about="&coffee;Coffee_Ingredient">
+        <rdfs:subClassOf rdf:resource="&coffee;Coffee"/>
+        <rdfs:comment>This class contains the different ingredient types, which can be used to produce coffee.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/Cup -->
+
+    <Class rdf:about="&coffee;Cup">
+        <rdfs:subClassOf rdf:resource="&coffee;Coffee"/>
+        <rdfs:comment>This class contains the different cup types, which can be used to produce coffee.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/Milk -->
+
+    <Class rdf:about="&coffee;Milk">
+        <rdfs:subClassOf rdf:resource="&coffee;Coffee_Ingredient"/>
+        <rdfs:comment>This subclass contains the milks, which can be used to produce coffee.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/Sugar -->
+
+    <Class rdf:about="&coffee;Sugar">
+        <rdfs:subClassOf rdf:resource="&coffee;Coffee_Ingredient"/>
+        <rdfs:comment>This subclass conatins the sugars, which can be used to produce coffee.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/decaffeinato_pad -->
+
+    <NamedIndividual rdf:about="&coffee;decaffeinato_pad">
+        <rdf:type rdf:resource="&coffee;Base"/>
+        <coffee:hasY-coordinate rdf:datatype="&xsd;int">-60</coffee:hasY-coordinate>
+        <coffee:hasX-coordinate rdf:datatype="&xsd;int">260</coffee:hasX-coordinate>
+        <coffee:hasZ-coordinate rdf:datatype="&xsd;int">90</coffee:hasZ-coordinate>
+        <coffee:hasName rdf:datatype="&xsd;string">Decaffeinato Pad</coffee:hasName>
+    </NamedIndividual>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/decaffeinato_sugar_milk -->
+
+    <NamedIndividual rdf:about="&coffee;decaffeinato_sugar_milk">
+        <rdf:type rdf:resource="&coffee;Coffee"/>
+        <coffee:hasName rdf:datatype="&xsd;string">Decaffeinato</coffee:hasName>
+        <coffee:hasBase rdf:resource="&coffee;decaffeinato_pad"/>
+        <coffee:hasCup rdf:resource="&coffee;large_cup"/>
+        <coffee:hasMilk rdf:resource="&coffee;milk"/>
+        <coffee:hasSugar rdf:resource="&coffee;sugar_white"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/espresso_pad -->
+
+    <NamedIndividual rdf:about="&coffee;espresso_pad">
+        <rdf:type rdf:resource="&coffee;Base"/>
+        <coffee:hasY-coordinate rdf:datatype="&xsd;int">-130</coffee:hasY-coordinate>
+        <coffee:hasX-coordinate rdf:datatype="&xsd;int">300</coffee:hasX-coordinate>
+        <coffee:hasZ-coordinate rdf:datatype="&xsd;int">90</coffee:hasZ-coordinate>
+        <coffee:hasName rdf:datatype="&xsd;string">Espresso Pad</coffee:hasName>
+    </NamedIndividual>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/espresso_sugar_milk -->
+
+    <NamedIndividual rdf:about="&coffee;espresso_sugar_milk">
+        <rdf:type rdf:resource="&coffee;Coffee"/>
+        <coffee:hasName rdf:datatype="&xsd;string">Espresso</coffee:hasName>
+        <coffee:hasBase rdf:resource="&coffee;espresso_pad"/>
+        <coffee:hasCup rdf:resource="&coffee;large_cup"/>
+        <coffee:hasMilk rdf:resource="&coffee;milk"/>
+        <coffee:hasSugar rdf:resource="&coffee;sugar_white"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/large_cup -->
+
+    <NamedIndividual rdf:about="&coffee;large_cup">
+        <rdf:type rdf:resource="&coffee;Cup"/>
+        <coffee:hasY-coordinate rdf:datatype="&xsd;int">-210</coffee:hasY-coordinate>
+        <coffee:hasZ-coordinate rdf:datatype="&xsd;int">160</coffee:hasZ-coordinate>
+        <coffee:hasX-coordinate rdf:datatype="&xsd;int">240</coffee:hasX-coordinate>
+        <coffee:hasName rdf:datatype="&xsd;string">Cup</coffee:hasName>
+    </NamedIndividual>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/lungo_pad -->
+
+    <NamedIndividual rdf:about="&coffee;lungo_pad">
+        <rdf:type rdf:resource="&coffee;Base"/>
+        <coffee:hasY-coordinate rdf:datatype="&xsd;int">-140</coffee:hasY-coordinate>
+        <coffee:hasX-coordinate rdf:datatype="&xsd;int">250</coffee:hasX-coordinate>
+        <coffee:hasZ-coordinate rdf:datatype="&xsd;int">90</coffee:hasZ-coordinate>
+        <coffee:hasName rdf:datatype="&xsd;string">Lungo Pad</coffee:hasName>
+    </NamedIndividual>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/lungo_sugar_milk -->
+
+    <NamedIndividual rdf:about="&coffee;lungo_sugar_milk">
+        <rdf:type rdf:resource="&coffee;Coffee"/>
+        <coffee:hasName rdf:datatype="&xsd;string">Lungo</coffee:hasName>
+        <coffee:hasCup rdf:resource="&coffee;large_cup"/>
+        <coffee:hasBase rdf:resource="&coffee;lungo_pad"/>
+        <coffee:hasMilk rdf:resource="&coffee;milk"/>
+        <coffee:hasSugar rdf:resource="&coffee;sugar_white"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/milk -->
+
+    <NamedIndividual rdf:about="&coffee;milk">
+        <rdf:type rdf:resource="&coffee;Milk"/>
+        <coffee:hasZ-coordinate rdf:datatype="&xsd;int">100</coffee:hasZ-coordinate>
+        <coffee:hasY-coordinate rdf:datatype="&xsd;int">130</coffee:hasY-coordinate>
+        <coffee:hasX-coordinate rdf:datatype="&xsd;int">300</coffee:hasX-coordinate>
+        <coffee:hasName rdf:datatype="&xsd;string">Milk</coffee:hasName>
+    </NamedIndividual>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/ristretto_pad -->
+
+    <NamedIndividual rdf:about="&coffee;ristretto_pad">
+        <rdf:type rdf:resource="&coffee;Base"/>
+        <coffee:hasY-coordinate rdf:datatype="&xsd;int">-60</coffee:hasY-coordinate>
+        <coffee:hasX-coordinate rdf:datatype="&xsd;int">320</coffee:hasX-coordinate>
+        <coffee:hasZ-coordinate rdf:datatype="&xsd;int">90</coffee:hasZ-coordinate>
+        <coffee:hasName rdf:datatype="&xsd;string">Ristretto Pad</coffee:hasName>
+    </NamedIndividual>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/ristretto_sugar_milk -->
+
+    <NamedIndividual rdf:about="&coffee;ristretto_sugar_milk">
+        <rdf:type rdf:resource="&coffee;Coffee"/>
+        <coffee:hasName rdf:datatype="&xsd;string">Ristretto</coffee:hasName>
+        <coffee:hasCup rdf:resource="&coffee;large_cup"/>
+        <coffee:hasMilk rdf:resource="&coffee;milk"/>
+        <coffee:hasBase rdf:resource="&coffee;ristretto_pad"/>
+        <coffee:hasSugar rdf:resource="&coffee;sugar_white"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/soy_milk -->
+
+    <NamedIndividual rdf:about="&coffee;soy_milk">
+        <rdf:type rdf:resource="&coffee;Milk"/>
+        <coffee:hasZ-coordinate rdf:datatype="&xsd;int">110</coffee:hasZ-coordinate>
+        <coffee:hasY-coordinate rdf:datatype="&xsd;int">150</coffee:hasY-coordinate>
+        <coffee:hasX-coordinate rdf:datatype="&xsd;int">255</coffee:hasX-coordinate>
+        <coffee:hasName rdf:datatype="&xsd;string">Soy Milk</coffee:hasName>
+    </NamedIndividual>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/sugar_white -->
+
+    <NamedIndividual rdf:about="&coffee;sugar_white">
+        <rdf:type rdf:resource="&coffee;Sugar"/>
+        <coffee:hasY-coordinate rdf:datatype="&xsd;int">205</coffee:hasY-coordinate>
+        <coffee:hasX-coordinate rdf:datatype="&xsd;int">260</coffee:hasX-coordinate>
+        <coffee:hasZ-coordinate rdf:datatype="&xsd;int">85</coffee:hasZ-coordinate>
+        <coffee:hasName rdf:datatype="&xsd;string">White Sugar</coffee:hasName>
+    </NamedIndividual>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/tea_sugar -->
+
+    <NamedIndividual rdf:about="&coffee;tea_sugar">
+        <rdf:type rdf:resource="&coffee;Coffee"/>
+        <coffee:hasName rdf:datatype="&xsd;string">Tea</coffee:hasName>
+        <coffee:hasCup rdf:resource="&coffee;large_cup"/>
+        <coffee:hasSugar rdf:resource="&coffee;sugar_white"/>
+        <coffee:hasBase rdf:resource="&coffee;tee_bag"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://austria.omilab.org/omirob/omiarm1/ontology/coffee/tee_bag -->
+
+    <NamedIndividual rdf:about="&coffee;tee_bag">
+        <rdf:type rdf:resource="&coffee;Base"/>
+        <coffee:hasX-coordinate rdf:datatype="&xsd;int">290</coffee:hasX-coordinate>
+        <coffee:hasY-coordinate rdf:datatype="&xsd;int">60</coffee:hasY-coordinate>
+        <coffee:hasZ-coordinate rdf:datatype="&xsd;int">80</coffee:hasZ-coordinate>
+        <coffee:hasName rdf:datatype="&xsd;string">Tea Bag</coffee:hasName>
+    </NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+
