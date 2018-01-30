@@ -21,7 +21,7 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 
 public class OmniRob {
 
-	public String moveToItem(String item, String restURI, String authToken){
+	public String moveToItem(String item, String restURI, String authToken, String flag){
 
 		BasicConfigurator.configure();
 		Logger.getRootLogger().setLevel(Level.OFF); 
@@ -30,7 +30,10 @@ public class OmniRob {
 		int itemY = getCoordinate(item, "Y");
 		int itemZ = getCoordinate(item, "Z");
 
-		String res = moveArm(itemX, itemY, itemZ, restURI, authToken);
+		moveArm(itemX, itemY, 160, restURI, authToken);
+		moveArm(itemX, itemY, itemZ, restURI, authToken);
+		grabOn(flag, restURI, authToken);
+		String res = moveArm(itemX, itemY, 160, restURI, authToken);
 		
 		return res;
 		
@@ -93,7 +96,7 @@ public class OmniRob {
 					  .header("Content-Type", "application/json")
 					  .header("Cache-Control", "no-cache")
 					  .header("Authorization", "Bearer "+authToken)
-					  .body("true")
+					  .body(flag)
 					  .asString();
 
 			String resp = response.getStatusText();
