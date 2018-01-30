@@ -40,7 +40,7 @@ public class OmniRob {
 	}	
 
 	public int getCoordinate(String item, String xyz){
-		Model coffeeOntology = FileManager.get().loadModel("https://uni.asilcetin.com/cmke/coffeeOntology.rdf");
+		Model coffeeOntology = FileManager.get().loadModel("src/main/resources/coffeeOntology.rdf");
 		String Namespace = "http://austria.omilab.org/omirob/omiarm1/ontology/coffee/";
 		Resource resource = coffeeOntology.getResource(Namespace+item);
 		Property coordinate = coffeeOntology.getProperty(Namespace+"has"+xyz+"-coordinate");
