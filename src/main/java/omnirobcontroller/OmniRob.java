@@ -45,7 +45,7 @@ public class OmniRob {
 		Resource resource = coffeeOntology.getResource(Namespace+item);
 		Property coordinate = coffeeOntology.getProperty(Namespace+"has"+xyz+"-coordinate");
 		int result = resource.getProperty(coordinate).getInt();
-		System.out.print(result);
+		//System.out.print(result);
 		return result;
 	}	
 
@@ -75,20 +75,8 @@ public class OmniRob {
 		//System.out.print(coordinates);
 	    return resp;
 	}
-	
 
-	public String grabOn(String flag, String restURI, String authToken){
-		/*
-		Client client = ClientBuilder.newClient();
-		//client.register(new LoggingFilter());
-		WebTarget path = client.target("http://austria.omilab.org/omirob/dobot1/rest/grabOn");
-		String grabFlag = flag;
-		String resp = path
-				.request(MediaType.APPLICATION_JSON)
-				.header("Authorization", "Bearer "+authToken)			
-		        .post(Entity.json(grabFlag))
-		        .readEntity(String.class);
-		*/
+	private String grabOn(String flag, String restURI, String authToken){
 
 		HttpResponse<String> response;
 		try {
@@ -99,17 +87,12 @@ public class OmniRob {
 					  .body(flag)
 					  .asString();
 
-			String resp = response.getStatusText();
-			
+			String resp = response.getStatusText();	
 		    return resp;				
-			
 		} catch (UnirestException e) {
 			e.printStackTrace();
-		}
-		
+		}	
 		return "Error, please check your settings.";
-
 	}
-	
 	
 }
