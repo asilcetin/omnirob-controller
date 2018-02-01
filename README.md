@@ -1,6 +1,4 @@
 # omnirob-controller
-Omnirob robot arm controller Java app - make your favourite coffee using a robot arm.
-
 Built as a REST client which queries the XYZ coordinates of objects from an RDF ontology, this Java application allows you to make three different kinds of coffee recipes with a valid authentication token.
 
 ## How to use

@@ -30,10 +30,10 @@ public class OmniRob {
 		int itemY = getCoordinate(item, "Y");
 		int itemZ = getCoordinate(item, "Z");
 
-		moveArm(itemX, itemY, 160, restURI, authToken);
+		moveArm(itemX, itemY, 180, restURI, authToken);
 		moveArm(itemX, itemY, itemZ, restURI, authToken);
 		grabOn(flag, restURI, authToken);
-		String res = moveArm(itemX, itemY, 160, restURI, authToken);
+		String res = moveArm(itemX, itemY, 180, restURI, authToken);
 		
 		return res;
 		
